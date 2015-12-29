@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JFF-bY-qA6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Conversion View Controller-->
+        <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,6 +61,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="fahrenheightFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="Tt1-Ke-q3k"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="y9P-Q0-13P"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -97,6 +98,7 @@
                             <outletCollection property="gestureRecognizers" destination="Z7o-fN-OLH" appends="YES" id="Jj5-Vp-UT4"/>
                         </connections>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Convert" image="ConvertIcon" id="BMS-Va-nOj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="cXl-Gn-PAJ" id="FN0-3F-Ilo"/>
@@ -110,7 +112,27 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="451.5" y="538.5"/>
+            <point key="canvasLocation" x="1380.5" y="1290.5"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="XgR-Lb-JSg">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="JFF-bY-qA6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="UhD-XY-QiJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="TAY-hC-UoD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mmI-Jr-MrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="480"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConvertIcon" width="49" height="33"/>
+    </resources>
 </document>
